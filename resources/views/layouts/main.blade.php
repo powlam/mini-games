@@ -7,11 +7,13 @@
         <title>@yield('title', config('app.name'))</title>
 
         <link href="/css/app.css" rel="stylesheet">
-        <script defer src="/js/app.js"></script>
+        @yield('styles')
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+        <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
             @yield('main')
         </div>
+        <script defer src="/js/app.js"></script>
+        @yield('scripts')
     </body>
 </html>

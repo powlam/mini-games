@@ -13,4 +13,12 @@ class AppController extends Controller
     {
         return view('welcome');
     }
+
+    /**
+     * @return \Illuminate\View\View
+     */
+    public function secretWord()
+    {
+        return view('secret-word');
+    }
 }
