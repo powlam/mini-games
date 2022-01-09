@@ -2,10 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class CheckedWord extends Model
+class CheckedWord
 {
     const CLUE_OK = 1;
     const CLUE_FOUND_BUT_NOT_HERE = 2;
@@ -30,12 +29,14 @@ class CheckedWord extends Model
     private function check()
     {
         $equal = $this->word === $this->secret;
+        $word_chars = str_split($this->word);
+        $this->clues = [];
         if ($equal) {
-            $this->clues = [];
+            foreach (array_keys($word_chars) as $k) {
+                $this->clues[$k] = self::CLUE_OK;
+            }
         } else {
-            $word_chars = str_split($this->word);
             $secret_chars = str_split($this->secret);
-            $this->clues = [];
             foreach (array_keys($word_chars) as $k) {
                 $this->clues[$k] = $this->clueForChar($k, $word_chars, $secret_chars);
             }

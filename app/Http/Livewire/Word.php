@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\CheckedWord;
+use App\Models\SecretWord;
 use Livewire\Component;
 
 class Word extends Component
@@ -11,6 +12,12 @@ class Word extends Component
     public $word;
     public $found = false;
     public $tries = [];
+    public $error;
+
+    public function mount()
+    {
+        $this->secret = SecretWord::get();
+    }
 
     public function render()
     {
@@ -19,10 +26,19 @@ class Word extends Component
 
     public function checkWord()
     {
-        $tried = new CheckedWord($this->word, $this->secret);
-        $this->found = $tried->isEqual;
-        if (!$this->found) {
+        $this->resetError();
+        if (SecretWord::isValid($this->word)) {
+            $tried = new CheckedWord($this->word, $this->secret);
+            $this->found = $tried->isEqual;
             $this->tries[] = ['word' => $tried->word, 'clues' => $tried->clues];
+            $this->word = '';
+        } else {
+            $this->error = "'{$this->word}' is not a valid word";
         }
+    }
+
+    public function resetError()
+    {
+        $this->error = '';
     }
 }
