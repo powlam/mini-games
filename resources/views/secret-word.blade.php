@@ -3,10 +3,10 @@
 @section('title', 'Secret word')
 
 @section('main')
-    <div class="text-center">
-        <h1 class="font-bold text-xl">Secret word</h1>
+    <div class="p-4 text-center bg-stone-200 dark:bg-stone-700 rounded shadow-xl">
+        <h1 class="font-bold text-xl tracking-wide">Find the <span class="font-black text-shadow">Secret word</span></h1>
 
-        <livewire:word secret='hello' />
+        <livewire:word />
     </div>
 @endsection
 

@@ -12,17 +12,17 @@
             if (($clues ?? false) && array_key_exists($k, $clues)) {
                 switch ($clues[$k]) {
                     case App\Models\CheckedWord::CLUE_OK:
-                        $clue_classes = 'border-green-400 bg-green-200';
+                        $clue_classes = 'border-lime-400 bg-lime-200 dark:bg-lime-600';
                         break;
                     case App\Models\CheckedWord::CLUE_FOUND_BUT_NOT_HERE:
-                        $clue_classes = 'border-yellow-400 bg-yellow-200';
+                        $clue_classes = 'border-stone-400 bg-amber-200 dark:bg-amber-600';
                         break;
                     case App\Models\CheckedWord::CLUE_NOT_FOUND:
-                        $clue_classes = 'border-gray-400 bg-gray-200';
+                        $clue_classes = 'border-stone-400 bg-stone-200 dark:bg-stone-600';
                         break;
                 }
             }
         @endphp
-        <div class="inline-block p-2 mx-1 uppercase border-2 {{ $clue_classes ?? 'border-gray-400' }}">{{ $word_chars[$k] ?? '' }}</div>
+        <div class="inline-block p-2 mx-1 uppercase border-2 {{ $clue_classes ?? 'border-stone-400 bg-stone-200 dark:bg-stone-600' }}">{{ $word_chars[$k] ?? '' }}</div>
     @endfor
 </div>
