@@ -33,7 +33,7 @@ class Word extends Component
             $this->tries[] = ['word' => $tried->word, 'clues' => $tried->clues];
             $this->word = '';
         } else {
-            $this->error = "'{$this->word}' is not a valid word";
+            $this->error = __('secret-word.not-valid-word', ['word' => $this->word]);
         }
     }
 

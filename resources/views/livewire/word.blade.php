@@ -15,7 +15,7 @@
 
     @if ($found)
         <div class="p-2 m-2 bg-lime-200 text-sm text-lime-600 rounded border-2 border-lime-400">
-            WELL DONE! "{{ $secret }}" was the secret word
+            @lang('secret-word.well-done', ['secret' => $secret])
         </div>
     @endif
 </div>
