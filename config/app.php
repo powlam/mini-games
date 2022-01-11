@@ -213,6 +213,7 @@ return [
         'Http' => Illuminate\Support\Facades\Http::class,
         'Js' => Illuminate\Support\Js::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
+        'Language' => Akaunting\Language\Facade::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,

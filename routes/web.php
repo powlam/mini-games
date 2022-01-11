@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [AppController::class, 'welcome']);
-Route::get('/secret-word', [AppController::class, 'secretWord']);
+Route::group(['middleware' => 'language'], function () {
+    Route::get('/', [AppController::class, 'welcome']);
+    Route::get('/secret-word', [AppController::class, 'secretWord']);
+});
