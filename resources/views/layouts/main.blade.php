@@ -15,6 +15,9 @@
         <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
             @yield('main')
         </div>
+        <div class="fixed top-0 right-0 p-1">
+            {{ language()->flags() }}
+        </div>
         <script defer src="/js/app.js"></script>
         @yield('scripts')
     </body>
