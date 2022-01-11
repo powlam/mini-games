@@ -23,6 +23,6 @@
                 }
             }
         @endphp
-        <div class="inline-block p-2 mx-1 uppercase border-2 {{ $clue_classes ?? 'border-stone-400 bg-stone-200 dark:bg-stone-600' }}">{{ $word_chars[$k] ?? '' }}</div>
+        <div class="inline-block p-2 mx-1 uppercase border-2 {{ $clue_classes ?? 'border-stone-400 bg-stone-300 dark:bg-stone-500' }}">{!! $word_chars[$k] ?? '&nbsp;' !!}</div>
     @endfor
 </div>

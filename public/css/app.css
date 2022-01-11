@@ -550,9 +550,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
-.bg-stone-100 {
+.bg-stone-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(245 245 244 / var(--tw-bg-opacity));
+  background-color: rgb(214 211 209 / var(--tw-bg-opacity));
 }
 .bg-red-200 {
   --tw-bg-opacity: 1;
@@ -732,9 +732,9 @@ Ensure the default browser behavior of the `hidden` attribute.
     border-color: rgb(55 65 81 / var(--tw-border-opacity));
   }
 
-  .dark\:bg-stone-600 {
+  .dark\:bg-stone-500 {
     --tw-bg-opacity: 1;
-    background-color: rgb(87 83 78 / var(--tw-bg-opacity));
+    background-color: rgb(120 113 108 / var(--tw-bg-opacity));
   }
 
   .dark\:bg-stone-700 {
@@ -755,6 +755,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .dark\:bg-amber-600 {
     --tw-bg-opacity: 1;
     background-color: rgb(217 119 6 / var(--tw-bg-opacity));
+  }
+
+  .dark\:bg-stone-600 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(87 83 78 / var(--tw-bg-opacity));
   }
 
   .dark\:bg-gray-800 {
